@@ -1,0 +1,70 @@
+{
+  "@@locale": "fr",
+  "appTitle": "IT Support Agent",
+
+  "loginSubtitle": "Connectez-vous pour recevoir et traiter les tickets de support",
+  "serverAddressLabel": "Adresse du serveur Odoo",
+  "apiKeyLabel": "Clé API",
+  "apiKeyHint": "Votre clé API personnelle",
+  "signInButton": "Se connecter",
+  "errorEnterServerAddress": "Veuillez saisir l'adresse du serveur",
+  "errorEnterApiKey": "Veuillez saisir la clé API",
+  "errorNotAgent": "Ce compte n'appartient pas au groupe IT Support Agent/Manager sur Odoo. Veuillez contacter votre administrateur.",
+  "errorConnectionFailed": "Connexion impossible : {error}",
+
+  "appBarTitle": "IT Support",
+  "tabMine": "Mes tickets ({count})",
+  "tabUnassigned": "Non assignés ({count})",
+  "retryButton": "Réessayer",
+  "emptyMyTickets": "Vous n'avez aucun ticket en cours.",
+  "emptyUnassignedTickets": "Aucun ticket en attente de prise en charge.",
+
+  "priorityLow": "Faible",
+  "priorityNormal": "Normale",
+  "priorityHigh": "Élevée",
+  "priorityUrgent": "Urgente",
+
+  "stateNew": "Nouveau",
+  "stateAssigned": "Assigné",
+  "stateInProgress": "En cours",
+  "statePaused": "En pause",
+  "stateDone": "Terminé",
+  "stateCancelled": "Annulé",
+
+  "noDeviceLabel": "Aucun appareil associé",
+  "hoursLabel": "{hours} h",
+
+  "assignToMeButton": "M'assigner",
+  "startButton": "Démarrer",
+  "endButton": "Terminer",
+  "markDoneButton": "Terminé",
+
+  "supportModeDialogTitle": "Mode de support",
+  "supportModeOnline": "En ligne",
+  "supportModeOnsite": "Sur site",
+
+  "endSessionDialogTitle": "Terminer la session",
+  "endSessionNoteHint": "Travail effectué",
+  "endSessionResolutionStatusLabel": "Statut de résolution",
+  "endSessionResolutionStatusHint": "-- Sélectionner --",
+  "resolutionStatusResolved": "Résolu",
+  "resolutionStatusPartiallyResolved": "Partiellement résolu",
+  "resolutionStatusNotResolved": "Non résolu",
+  "resolutionStatusEscalated": "Escaladé",
+  "endSessionNoteRequiredError": "Veuillez décrire le travail effectué.",
+  "endSessionResolutionRequiredError": "Veuillez sélectionner le statut de résolution.",
+  "cancelButton": "Annuler",
+  "confirmButton": "Confirmer",
+
+  "markDoneDialogTitle": "Marquer ce ticket comme terminé ?",
+  "markDoneDialogContent": "Le ticket passera au statut Terminé. Toute session en cours sera automatiquement fermée.",
+
+  "noMessagesYet": "Aucun message pour l'instant.",
+  "chatInputHint": "Écrivez un message...",
+
+  "ticketFallbackTitle": "Ticket",
+
+  "settingsTitle": "Paramètres",
+  "languageLabel": "Langue",
+  "logoutButton": "Se déconnecter"
+}

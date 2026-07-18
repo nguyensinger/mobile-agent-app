@@ -1,0 +1,36 @@
+# --- Secrets - KHÔNG BAO GIỜ commit các file này ---
+android/key.properties
+android/app/*.jks
+android/app/*.keystore
+.env
+
+# --- Flutter/Dart ---
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# --- Android ---
+android/local.properties
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+**/android/**/GeneratedPluginRegistrant.java
+
+# --- iOS ---
+ios/Flutter/flutter_export_environment.sh
+ios/Pods/
+**/ios/**/Flutter/Generated.xcconfig
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+android/app/google-services.json

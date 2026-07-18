@@ -1,0 +1,83 @@
+{
+  "@@locale": "en",
+  "appTitle": "IT Support Agent",
+  "@appTitle": { "description": "App title shown on the login screen" },
+
+  "loginSubtitle": "Sign in to receive and handle support tickets",
+  "serverAddressLabel": "Odoo server address",
+  "apiKeyLabel": "API Key",
+  "apiKeyHint": "Your personal API key",
+  "signInButton": "Sign in",
+  "errorEnterServerAddress": "Please enter the server address",
+  "errorEnterApiKey": "Please enter the API key",
+  "errorNotAgent": "This account is not in the IT Support Agent/Manager group on Odoo. Please contact your administrator.",
+  "errorConnectionFailed": "Could not connect: {error}",
+  "@errorConnectionFailed": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "appBarTitle": "IT Support",
+  "tabMine": "Mine ({count})",
+  "@tabMine": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "tabUnassigned": "Unassigned ({count})",
+  "@tabUnassigned": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "retryButton": "Retry",
+  "emptyMyTickets": "You have no tickets in progress.",
+  "emptyUnassignedTickets": "No tickets waiting to be picked up.",
+
+  "priorityLow": "Low",
+  "priorityNormal": "Normal",
+  "priorityHigh": "High",
+  "priorityUrgent": "Urgent",
+
+  "stateNew": "New",
+  "stateAssigned": "Assigned",
+  "stateInProgress": "In progress",
+  "statePaused": "Paused",
+  "stateDone": "Done",
+  "stateCancelled": "Cancelled",
+
+  "noDeviceLabel": "No device attached",
+  "hoursLabel": "{hours} h",
+  "@hoursLabel": {
+    "placeholders": { "hours": { "type": "String" } }
+  },
+
+  "assignToMeButton": "Assign to Me",
+  "startButton": "Start",
+  "endButton": "End",
+  "markDoneButton": "Done",
+
+  "supportModeDialogTitle": "Support mode",
+  "supportModeOnline": "Online",
+  "supportModeOnsite": "Onsite",
+
+  "endSessionDialogTitle": "End session",
+  "endSessionNoteHint": "Work performed",
+  "endSessionResolutionStatusLabel": "Resolution status",
+  "endSessionResolutionStatusHint": "-- Select --",
+  "resolutionStatusResolved": "Resolved",
+  "resolutionStatusPartiallyResolved": "Partially Resolved",
+  "resolutionStatusNotResolved": "Not Resolved",
+  "resolutionStatusEscalated": "Escalated",
+  "endSessionNoteRequiredError": "Please describe the work performed.",
+  "endSessionResolutionRequiredError": "Please select the resolution status.",
+  "cancelButton": "Cancel",
+  "confirmButton": "Confirm",
+
+  "markDoneDialogTitle": "Mark ticket as done?",
+  "markDoneDialogContent": "The ticket will be set to Done. Any running session will be closed automatically.",
+
+  "noMessagesYet": "No messages yet.",
+  "chatInputHint": "Type a message...",
+
+  "ticketFallbackTitle": "Ticket",
+
+  "settingsTitle": "Settings",
+  "languageLabel": "Language",
+  "logoutButton": "Log out"
+}

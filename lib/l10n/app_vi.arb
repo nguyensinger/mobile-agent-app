@@ -1,0 +1,70 @@
+{
+  "@@locale": "vi",
+  "appTitle": "IT Support Agent",
+
+  "loginSubtitle": "Đăng nhập để nhận và xử lý ticket hỗ trợ",
+  "serverAddressLabel": "Địa chỉ máy chủ Odoo",
+  "apiKeyLabel": "API Key",
+  "apiKeyHint": "API key cá nhân của bạn",
+  "signInButton": "Đăng nhập",
+  "errorEnterServerAddress": "Vui lòng nhập địa chỉ máy chủ",
+  "errorEnterApiKey": "Vui lòng nhập API key",
+  "errorNotAgent": "Tài khoản này không thuộc nhóm IT Support Agent/Manager trên Odoo. Vui lòng liên hệ quản trị viên.",
+  "errorConnectionFailed": "Không kết nối được: {error}",
+
+  "appBarTitle": "IT Support",
+  "tabMine": "Của tôi ({count})",
+  "tabUnassigned": "Chưa gán ({count})",
+  "retryButton": "Thử lại",
+  "emptyMyTickets": "Bạn chưa có ticket nào đang xử lý.",
+  "emptyUnassignedTickets": "Không có ticket nào đang chờ tiếp nhận.",
+
+  "priorityLow": "Thấp",
+  "priorityNormal": "Bình thường",
+  "priorityHigh": "Cao",
+  "priorityUrgent": "Khẩn cấp",
+
+  "stateNew": "Mới",
+  "stateAssigned": "Đã gán",
+  "stateInProgress": "Đang xử lý",
+  "statePaused": "Tạm dừng",
+  "stateDone": "Hoàn thành",
+  "stateCancelled": "Đã hủy",
+
+  "noDeviceLabel": "Không gắn thiết bị",
+  "hoursLabel": "{hours} giờ",
+
+  "assignToMeButton": "Nhận xử lý",
+  "startButton": "Bắt đầu",
+  "endButton": "Kết thúc",
+  "markDoneButton": "Hoàn thành",
+
+  "supportModeDialogTitle": "Hình thức xử lý",
+  "supportModeOnline": "Online",
+  "supportModeOnsite": "Onsite",
+
+  "endSessionDialogTitle": "Kết thúc xử lý",
+  "endSessionNoteHint": "Nội dung công việc đã thực hiện",
+  "endSessionResolutionStatusLabel": "Trạng thái xử lý",
+  "endSessionResolutionStatusHint": "-- Chọn --",
+  "resolutionStatusResolved": "Đã giải quyết",
+  "resolutionStatusPartiallyResolved": "Giải quyết một phần",
+  "resolutionStatusNotResolved": "Chưa giải quyết",
+  "resolutionStatusEscalated": "Chuyển cấp cao hơn",
+  "endSessionNoteRequiredError": "Vui lòng mô tả công việc đã thực hiện.",
+  "endSessionResolutionRequiredError": "Vui lòng chọn trạng thái xử lý.",
+  "cancelButton": "Hủy",
+  "confirmButton": "Xác nhận",
+
+  "markDoneDialogTitle": "Đánh dấu ticket hoàn thành?",
+  "markDoneDialogContent": "Ticket sẽ chuyển sang trạng thái Hoàn thành. Phiên xử lý đang chạy (nếu có) sẽ tự động kết thúc.",
+
+  "noMessagesYet": "Chưa có tin nhắn nào.",
+  "chatInputHint": "Nhập tin nhắn...",
+
+  "ticketFallbackTitle": "Ticket",
+
+  "settingsTitle": "Cài đặt",
+  "languageLabel": "Ngôn ngữ",
+  "logoutButton": "Đăng xuất"
+}
