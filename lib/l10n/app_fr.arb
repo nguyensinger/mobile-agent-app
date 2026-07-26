@@ -66,5 +66,12 @@
 
   "settingsTitle": "Paramètres",
   "languageLabel": "Langue",
-  "logoutButton": "Se déconnecter"
+  "logoutButton": "Se déconnecter",
+
+  "bookingRequestsTitle": "Demandes de réservation",
+  "bookingRequestsTooltip": "Demandes de réservation",
+  "emptyBookingRequests": "Aucune demande de réservation en attente.",
+  "bookingConfirmButton": "Confirmer et créer un ticket",
+  "bookingConfirmDialogTitle": "Confirmer cette réservation ?",
+  "bookingConfirmDialogContent": "Un profil client (si nécessaire) et un ticket initial seront créés à partir de cette demande."
 }

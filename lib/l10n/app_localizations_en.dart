@@ -147,10 +147,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resolutionStatusEscalated => 'Escalated';
 
   @override
-  String get endSessionNoteRequiredError => 'Please describe the work performed.';
+  String get endSessionNoteRequiredError =>
+      'Please describe the work performed.';
 
   @override
-  String get endSessionResolutionRequiredError => 'Please select the resolution status.';
+  String get endSessionResolutionRequiredError =>
+      'Please select the resolution status.';
 
   @override
   String get cancelButton => 'Cancel';
@@ -182,4 +184,23 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logoutButton => 'Log out';
+
+  @override
+  String get bookingRequestsTitle => 'Booking Requests';
+
+  @override
+  String get bookingRequestsTooltip => 'Booking Requests';
+
+  @override
+  String get emptyBookingRequests => 'No pending booking requests.';
+
+  @override
+  String get bookingConfirmButton => 'Confirm & Create Ticket';
+
+  @override
+  String get bookingConfirmDialogTitle => 'Confirm this booking?';
+
+  @override
+  String get bookingConfirmDialogContent =>
+      'A customer profile (if needed) and an initial ticket will be created from this request.';
 }

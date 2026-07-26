@@ -148,10 +148,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get resolutionStatusEscalated => 'Chuyển cấp cao hơn';
 
   @override
-  String get endSessionNoteRequiredError => 'Vui lòng mô tả công việc đã thực hiện.';
+  String get endSessionNoteRequiredError =>
+      'Vui lòng mô tả công việc đã thực hiện.';
 
   @override
-  String get endSessionResolutionRequiredError => 'Vui lòng chọn trạng thái xử lý.';
+  String get endSessionResolutionRequiredError =>
+      'Vui lòng chọn trạng thái xử lý.';
 
   @override
   String get cancelButton => 'Hủy';
@@ -183,4 +185,23 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get logoutButton => 'Đăng xuất';
+
+  @override
+  String get bookingRequestsTitle => 'Yêu cầu đặt lịch';
+
+  @override
+  String get bookingRequestsTooltip => 'Yêu cầu đặt lịch';
+
+  @override
+  String get emptyBookingRequests => 'Không có yêu cầu đặt lịch nào đang chờ.';
+
+  @override
+  String get bookingConfirmButton => 'Xác nhận & Tạo Ticket';
+
+  @override
+  String get bookingConfirmDialogTitle => 'Xác nhận yêu cầu đặt lịch này?';
+
+  @override
+  String get bookingConfirmDialogContent =>
+      'Hệ thống sẽ tạo hồ sơ khách hàng (nếu chưa có) và một ticket ban đầu từ yêu cầu này.';
 }

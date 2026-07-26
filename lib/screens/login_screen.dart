@@ -52,6 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
       await auth.saveAgentIdentity(
         userId: who['user_id'] as int,
         name: who['name'] as String,
+        isManager: who['is_manager'] == true,
       );
       if (mounted) widget.onLoggedIn();
     } catch (e) {

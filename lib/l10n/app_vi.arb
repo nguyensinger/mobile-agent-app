@@ -66,5 +66,12 @@
 
   "settingsTitle": "Cài đặt",
   "languageLabel": "Ngôn ngữ",
-  "logoutButton": "Đăng xuất"
+  "logoutButton": "Đăng xuất",
+
+  "bookingRequestsTitle": "Yêu cầu đặt lịch",
+  "bookingRequestsTooltip": "Yêu cầu đặt lịch",
+  "emptyBookingRequests": "Không có yêu cầu đặt lịch nào đang chờ.",
+  "bookingConfirmButton": "Xác nhận & Tạo Ticket",
+  "bookingConfirmDialogTitle": "Xác nhận yêu cầu đặt lịch này?",
+  "bookingConfirmDialogContent": "Hệ thống sẽ tạo hồ sơ khách hàng (nếu chưa có) và một ticket ban đầu từ yêu cầu này."
 }

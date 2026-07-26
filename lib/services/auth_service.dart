@@ -17,6 +17,7 @@ class AuthService {
   static const _keyApiKey = 'odoo_api_key';
   static const _keyAgentName = 'agent_name';
   static const _keyAgentUserId = 'agent_user_id';
+  static const _keyIsManager = 'agent_is_manager';
   static const _keyLanguage = 'app_language';
 
   Future<bool> isConfigured() async {
@@ -39,13 +40,17 @@ class AuthService {
 
   /// Lưu identity thật lấy từ server (gọi sau khi xác thực API key thành công qua
   /// ApiService.whoami()) - đây là nguồn duy nhất để biết "agent này là ai".
+  /// isManager quyết định có hiện màn hình Booking Requests hay không (tính năng
+  /// chỉ dành cho IT Support Manager, backend cũng chặn ở API nếu không đúng nhóm).
   Future<void> saveAgentIdentity({
     required int userId,
     required String name,
+    bool isManager = false,
   }) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(_keyAgentUserId, userId);
     await prefs.setString(_keyAgentName, name);
+    await prefs.setBool(_keyIsManager, isManager);
   }
 
   Future<String?> getBaseUrl() async {
@@ -68,6 +73,11 @@ class AuthService {
     return prefs.getInt(_keyAgentUserId);
   }
 
+  Future<bool> getIsManager() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(_keyIsManager) ?? false;
+  }
+
   Future<String?> getLanguage() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(_keyLanguage);
@@ -84,5 +94,6 @@ class AuthService {
     await prefs.remove(_keyApiKey);
     await prefs.remove(_keyAgentName);
     await prefs.remove(_keyAgentUserId);
+    await prefs.remove(_keyIsManager);
   }
 }

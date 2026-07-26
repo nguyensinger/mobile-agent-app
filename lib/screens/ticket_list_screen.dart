@@ -10,6 +10,7 @@ import '../l10n/app_localizations.dart';
 import 'ticket_detail_screen.dart';
 import 'login_screen.dart';
 import 'settings_screen.dart';
+import 'booking_requests_screen.dart';
 
 class TicketListScreen extends StatefulWidget {
   const TicketListScreen({super.key});
@@ -28,6 +29,7 @@ class _TicketListScreenState extends State<TicketListScreen> with SingleTickerPr
   bool _loading = true;
   String? _error;
   int _newTicketBadge = 0;
+  bool _isManager = false;
 
   @override
   void initState() {
@@ -35,6 +37,12 @@ class _TicketListScreenState extends State<TicketListScreen> with SingleTickerPr
     _tabController = TabController(length: 2, vsync: this);
     _loadTickets();
     _subscribeDispatch();
+    _loadManagerFlag();
+  }
+
+  Future<void> _loadManagerFlag() async {
+    final isManager = await AuthService().getIsManager();
+    if (mounted) setState(() => _isManager = isManager);
   }
 
   @override
@@ -99,6 +107,12 @@ class _TicketListScreenState extends State<TicketListScreen> with SingleTickerPr
     );
   }
 
+  void _openBookingRequests() {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const BookingRequestsScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -122,6 +136,12 @@ class _TicketListScreenState extends State<TicketListScreen> with SingleTickerPr
         ),
         actions: [
           IconButton(icon: const Icon(Icons.refresh), onPressed: () => _loadTickets()),
+          if (_isManager)
+            IconButton(
+              icon: const Icon(Icons.event_available),
+              tooltip: l10n.bookingRequestsTooltip,
+              onPressed: _openBookingRequests,
+            ),
           IconButton(icon: const Icon(Icons.settings), onPressed: _openSettings),
           IconButton(icon: const Icon(Icons.logout), onPressed: _logout),
         ],

@@ -149,10 +149,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get resolutionStatusEscalated => 'Escaladé';
 
   @override
-  String get endSessionNoteRequiredError => 'Veuillez décrire le travail effectué.';
+  String get endSessionNoteRequiredError =>
+      'Veuillez décrire le travail effectué.';
 
   @override
-  String get endSessionResolutionRequiredError => 'Veuillez sélectionner le statut de résolution.';
+  String get endSessionResolutionRequiredError =>
+      'Veuillez sélectionner le statut de résolution.';
 
   @override
   String get cancelButton => 'Annuler';
@@ -184,4 +186,24 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get logoutButton => 'Se déconnecter';
+
+  @override
+  String get bookingRequestsTitle => 'Demandes de réservation';
+
+  @override
+  String get bookingRequestsTooltip => 'Demandes de réservation';
+
+  @override
+  String get emptyBookingRequests =>
+      'Aucune demande de réservation en attente.';
+
+  @override
+  String get bookingConfirmButton => 'Confirmer et créer un ticket';
+
+  @override
+  String get bookingConfirmDialogTitle => 'Confirmer cette réservation ?';
+
+  @override
+  String get bookingConfirmDialogContent =>
+      'Un profil client (si nécessaire) et un ticket initial seront créés à partir de cette demande.';
 }

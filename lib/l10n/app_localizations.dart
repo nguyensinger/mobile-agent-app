@@ -429,6 +429,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Log out'**
   String get logoutButton;
+
+  /// No description provided for @bookingRequestsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking Requests'**
+  String get bookingRequestsTitle;
+
+  /// No description provided for @bookingRequestsTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking Requests'**
+  String get bookingRequestsTooltip;
+
+  /// No description provided for @emptyBookingRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'No pending booking requests.'**
+  String get emptyBookingRequests;
+
+  /// No description provided for @bookingConfirmButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm & Create Ticket'**
+  String get bookingConfirmButton;
+
+  /// No description provided for @bookingConfirmDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm this booking?'**
+  String get bookingConfirmDialogTitle;
+
+  /// No description provided for @bookingConfirmDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'A customer profile (if needed) and an initial ticket will be created from this request.'**
+  String get bookingConfirmDialogContent;
 }
 
 class _AppLocalizationsDelegate

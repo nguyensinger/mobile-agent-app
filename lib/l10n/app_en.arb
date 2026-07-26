@@ -79,5 +79,12 @@
 
   "settingsTitle": "Settings",
   "languageLabel": "Language",
-  "logoutButton": "Log out"
+  "logoutButton": "Log out",
+
+  "bookingRequestsTitle": "Booking Requests",
+  "bookingRequestsTooltip": "Booking Requests",
+  "emptyBookingRequests": "No pending booking requests.",
+  "bookingConfirmButton": "Confirm & Create Ticket",
+  "bookingConfirmDialogTitle": "Confirm this booking?",
+  "bookingConfirmDialogContent": "A customer profile (if needed) and an initial ticket will be created from this request."
 }

@@ -3,6 +3,7 @@
 import 'package:dio/dio.dart';
 import '../models/ticket.dart';
 import '../models/chat_message.dart';
+import '../models/booking_request.dart';
 import 'auth_service.dart';
 
 class ApiException implements Exception {
@@ -180,5 +181,18 @@ class ApiService {
       timeout: const Duration(seconds: 65),
     );
     return result as List<dynamic>;
+  }
+
+  // ---------------- Bookings (Manager-only) ----------------
+
+  Future<List<BookingRequest>> getBookingRequests() async {
+    final result = await _call('/api/v1/booking/list', {});
+    final list = (result as List).cast<Map<String, dynamic>>();
+    return list.map((j) => BookingRequest.fromJson(j)).toList();
+  }
+
+  Future<Map<String, dynamic>> createTicketFromBooking(int bookingId) async {
+    final result = await _call('/api/v1/booking/$bookingId/create_ticket', {});
+    return result as Map<String, dynamic>;
   }
 }
