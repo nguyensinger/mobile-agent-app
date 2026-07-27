@@ -87,8 +87,25 @@ class _TicketListScreenState extends State<TicketListScreen> with SingleTickerPr
   Future<void> _logout() async {
     await AuthService().logout();
     if (!mounted) return;
+    // pushAndRemoveUntil((route) => false) xoá sạch stack, kể cả route hiện tại của
+    // chính widget này -> context ở đây sẽ bị huỷ (defunct) ngay sau lệnh này chạy
+    // xong. Vì vậy onLoggedIn KHÔNG được dùng lại context đó (Navigator.of trên context
+    // đã huỷ chỉ bị assert chặn ở debug mode - ở release mode assert bị strip nên rơi
+    // thẳng vào "Null check operator used on a null value" khi đăng nhập lại thành công).
+    // Dùng routeContext (context riêng của chính LoginScreen, còn sống lúc onLoggedIn
+    // chạy) và push (không phải pop, vì stack đã rỗng, không có gì để quay lại) một
+    // TicketListScreen mới, giống hệt cách _RootRouter xử lý lần đăng nhập đầu tiên.
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (_) => LoginScreen(onLoggedIn: () => Navigator.of(context).pop())),
+      MaterialPageRoute(
+        builder: (routeContext) => LoginScreen(
+          onLoggedIn: () {
+            Navigator.of(routeContext).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (_) => const TicketListScreen()),
+              (route) => false,
+            );
+          },
+        ),
+      ),
       (route) => false,
     );
   }
