@@ -135,6 +135,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         : Text(l10n.signInButton),
                   ),
+                  // TEMP DEBUG marker - confirms which build is actually installed.
+                  // Remove together with the stack-trace debug block in _submit().
+                  const SizedBox(height: 12),
+                  Text(
+                    'debug build DBG-002',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 10, color: Theme.of(context).colorScheme.outline),
+                  ),
                 ],
               ),
             ),
