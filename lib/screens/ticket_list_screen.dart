@@ -5,6 +5,7 @@ import '../models/ticket.dart';
 import '../services/api_service.dart';
 import '../services/auth_service.dart';
 import '../services/realtime_service.dart';
+import '../services/fcm_service.dart';
 import '../widgets/ticket_card.dart';
 import '../l10n/app_localizations.dart';
 import 'ticket_detail_screen.dart';
@@ -99,6 +100,13 @@ class _TicketListScreenState extends State<TicketListScreen> with SingleTickerPr
       MaterialPageRoute(
         builder: (routeContext) => LoginScreen(
           onLoggedIn: () {
+            // Re-register the FCM token for the new session - _RootRouter does this
+            // on the app's very first login, but this re-login path bypasses
+            // _RootRouter entirely, so without this the device would keep sending
+            // push notifications tied to whichever agent was logged in before.
+            FcmService().setup().catchError((e) {
+              debugPrint('[FCM] setup error after re-login: $e');
+            });
             Navigator.of(routeContext).pushAndRemoveUntil(
               MaterialPageRoute(builder: (_) => const TicketListScreen()),
               (route) => false,

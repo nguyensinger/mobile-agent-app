@@ -55,16 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
         isManager: who['is_manager'] == true,
       );
       if (mounted) widget.onLoggedIn();
-    } catch (e, stackTrace) {
+    } catch (e) {
       await auth.logout();
-      // TEMP DEBUG: include the top of the stack trace in the visible error text
-      // so a screenshot pinpoints exactly which line threw - "Null check operator
-      // used on a null value" alone doesn't say where. Remove once the crash
-      // reported after logout->relogin is confirmed fixed.
-      debugPrint('[login] error: $e\n$stackTrace');
       if (mounted) {
-        final trace = stackTrace.toString().split('\n').take(4).join('\n');
-        setState(() => _error = '${l10n.errorConnectionFailed(e.toString())}\n\n$trace');
+        setState(() => _error = l10n.errorConnectionFailed(e.toString()));
       }
     } finally {
       if (mounted) setState(() => _loading = false);
@@ -134,14 +128,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                           )
                         : Text(l10n.signInButton),
-                  ),
-                  // TEMP DEBUG marker - confirms which build is actually installed.
-                  // Remove together with the stack-trace debug block in _submit().
-                  const SizedBox(height: 12),
-                  Text(
-                    'debug build DBG-002',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 10, color: Theme.of(context).colorScheme.outline),
                   ),
                 ],
               ),
