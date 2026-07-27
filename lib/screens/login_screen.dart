@@ -55,10 +55,16 @@ class _LoginScreenState extends State<LoginScreen> {
         isManager: who['is_manager'] == true,
       );
       if (mounted) widget.onLoggedIn();
-    } catch (e) {
+    } catch (e, stackTrace) {
       await auth.logout();
+      // TEMP DEBUG: include the top of the stack trace in the visible error text
+      // so a screenshot pinpoints exactly which line threw - "Null check operator
+      // used on a null value" alone doesn't say where. Remove once the crash
+      // reported after logout->relogin is confirmed fixed.
+      debugPrint('[login] error: $e\n$stackTrace');
       if (mounted) {
-        setState(() => _error = l10n.errorConnectionFailed(e.toString()));
+        final trace = stackTrace.toString().split('\n').take(4).join('\n');
+        setState(() => _error = '${l10n.errorConnectionFailed(e.toString())}\n\n$trace');
       }
     } finally {
       if (mounted) setState(() => _loading = false);
