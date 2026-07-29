@@ -30,8 +30,13 @@ class ChatMessage {
   }
 
   // Odoo message_post lưu body dạng HTML (thường bọc trong <p>...</p>), nên loại bỏ tag
-  // để hiển thị dạng text thuần trên app di động cho gọn.
+  // để hiển thị dạng text thuần trên app di động cho gọn. Đổi <br>/</p> thành newline
+  // TRƯỚC khi xoá các tag còn lại - nếu không, tin nhắn nhiều dòng (vd tin chào tự động
+  // khi End User tạo ticket từ Desktop Client) sẽ bị dồn lại thành 1 dòng dài.
   static String _stripHtml(String htmlText) {
-    return htmlText.replaceAll(RegExp(r'<[^>]*>'), '').trim();
+    final withBreaks = htmlText
+        .replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), '\n')
+        .replaceAll(RegExp(r'</p>\s*<p[^>]*>', caseSensitive: false), '\n\n');
+    return withBreaks.replaceAll(RegExp(r'<[^>]*>'), '').trim();
   }
 }
