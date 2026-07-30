@@ -16,14 +16,16 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _baseUrlCtrl = TextEditingController();
-  final _apiKeyCtrl = TextEditingController();
+  final _emailCtrl = TextEditingController();
+  final _passwordCtrl = TextEditingController();
   bool _loading = false;
   String? _error;
 
   @override
   void dispose() {
     _baseUrlCtrl.dispose();
-    _apiKeyCtrl.dispose();
+    _emailCtrl.dispose();
+    _passwordCtrl.dispose();
     super.dispose();
   }
 
@@ -39,21 +41,21 @@ class _LoginScreenState extends State<LoginScreen> {
     final l10n = AppLocalizations.of(context);
 
     final auth = AuthService();
-    await auth.saveServerCredentials(
-      baseUrl: _baseUrlCtrl.text,
-      apiKey: _apiKeyCtrl.text,
-    );
+    final baseUrl = _baseUrlCtrl.text.trim();
 
     try {
-      final who = await ApiService().whoami();
-      if (who['is_agent'] != true && who['is_manager'] != true) {
-        throw Exception(l10n.errorNotAgent);
-      }
+      // /api/v1/agent/login đã tự kiểm tra email/password VÀ quyền Agent/Manager
+      // phía server - nếu gọi thành công thì chắc chắn hợp lệ, không cần whoami()
+      // riêng nữa. Server trả luôn 1 API key mới, dùng cho mọi request sau này y
+      // hệt như khi dán tay 1 key có sẵn trước đây.
+      final result = await ApiService().login(baseUrl, _emailCtrl.text.trim(), _passwordCtrl.text);
+      await auth.saveServerCredentials(baseUrl: baseUrl, apiKey: result['api_key'] as String);
       await auth.saveAgentIdentity(
-        userId: who['user_id'] as int,
-        name: who['name'] as String,
-        isManager: who['is_manager'] == true,
+        userId: result['user_id'] as int,
+        name: result['name'] as String,
+        isManager: result['is_manager'] == true,
       );
+      _passwordCtrl.clear();
       if (mounted) widget.onLoggedIn();
     } catch (e) {
       await auth.logout();
@@ -104,14 +106,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
-                    controller: _apiKeyCtrl,
+                    controller: _emailCtrl,
                     decoration: InputDecoration(
-                      labelText: l10n.apiKeyLabel,
-                      hintText: l10n.apiKeyHint,
+                      labelText: l10n.emailLabel,
+                      border: const OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                    autofillHints: const [AutofillHints.username],
+                    validator: (v) => (v == null || v.trim().isEmpty) ? l10n.errorEnterEmail : null,
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _passwordCtrl,
+                    decoration: InputDecoration(
+                      labelText: l10n.passwordLabel,
                       border: const OutlineInputBorder(),
                     ),
                     obscureText: true,
-                    validator: (v) => (v == null || v.trim().isEmpty) ? l10n.errorEnterApiKey : null,
+                    autofillHints: const [AutofillHints.password],
+                    validator: (v) => (v == null || v.isEmpty) ? l10n.errorEnterPassword : null,
                   ),
                   if (_error != null) ...[
                     const SizedBox(height: 16),

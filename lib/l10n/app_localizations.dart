@@ -118,17 +118,17 @@ abstract class AppLocalizations {
   /// **'VM TECH server address'**
   String get serverAddressLabel;
 
-  /// No description provided for @apiKeyLabel.
+  /// No description provided for @emailLabel.
   ///
   /// In en, this message translates to:
-  /// **'API Key'**
-  String get apiKeyLabel;
+  /// **'Email'**
+  String get emailLabel;
 
-  /// No description provided for @apiKeyHint.
+  /// No description provided for @passwordLabel.
   ///
   /// In en, this message translates to:
-  /// **'Your personal API key'**
-  String get apiKeyHint;
+  /// **'Password'**
+  String get passwordLabel;
 
   /// No description provided for @signInButton.
   ///
@@ -142,17 +142,17 @@ abstract class AppLocalizations {
   /// **'Please enter the server address'**
   String get errorEnterServerAddress;
 
-  /// No description provided for @errorEnterApiKey.
+  /// No description provided for @errorEnterEmail.
   ///
   /// In en, this message translates to:
-  /// **'Please enter the API key'**
-  String get errorEnterApiKey;
+  /// **'Please enter your email'**
+  String get errorEnterEmail;
 
-  /// No description provided for @errorNotAgent.
+  /// No description provided for @errorEnterPassword.
   ///
   /// In en, this message translates to:
-  /// **'This account is not in the IT Support Agent/Manager group. Please contact your administrator.'**
-  String get errorNotAgent;
+  /// **'Please enter your password'**
+  String get errorEnterPassword;
 
   /// No description provided for @errorConnectionFailed.
   ///

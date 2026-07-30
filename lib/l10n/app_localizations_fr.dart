@@ -19,10 +19,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get serverAddressLabel => 'Adresse du serveur VM TECH';
 
   @override
-  String get apiKeyLabel => 'Clé API';
+  String get emailLabel => 'E-mail';
 
   @override
-  String get apiKeyHint => 'Votre clé API personnelle';
+  String get passwordLabel => 'Mot de passe';
 
   @override
   String get signInButton => 'Se connecter';
@@ -31,11 +31,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get errorEnterServerAddress => 'Veuillez saisir l\'adresse du serveur';
 
   @override
-  String get errorEnterApiKey => 'Veuillez saisir la clé API';
+  String get errorEnterEmail => 'Veuillez saisir votre e-mail';
 
   @override
-  String get errorNotAgent =>
-      'Ce compte n\'appartient pas au groupe IT Support Agent/Manager. Veuillez contacter votre administrateur.';
+  String get errorEnterPassword => 'Veuillez saisir votre mot de passe';
 
   @override
   String errorConnectionFailed(String error) {

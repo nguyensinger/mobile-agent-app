@@ -18,10 +18,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get serverAddressLabel => 'Địa chỉ máy chủ VM TECH';
 
   @override
-  String get apiKeyLabel => 'API Key';
+  String get emailLabel => 'Email';
 
   @override
-  String get apiKeyHint => 'API key cá nhân của bạn';
+  String get passwordLabel => 'Mật khẩu';
 
   @override
   String get signInButton => 'Đăng nhập';
@@ -30,11 +30,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get errorEnterServerAddress => 'Vui lòng nhập địa chỉ máy chủ';
 
   @override
-  String get errorEnterApiKey => 'Vui lòng nhập API key';
+  String get errorEnterEmail => 'Vui lòng nhập email';
 
   @override
-  String get errorNotAgent =>
-      'Tài khoản này không thuộc nhóm IT Support Agent/Manager. Vui lòng liên hệ quản trị viên.';
+  String get errorEnterPassword => 'Vui lòng nhập mật khẩu';
 
   @override
   String errorConnectionFailed(String error) {

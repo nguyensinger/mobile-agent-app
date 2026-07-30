@@ -18,10 +18,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get serverAddressLabel => 'VM TECH server address';
 
   @override
-  String get apiKeyLabel => 'API Key';
+  String get emailLabel => 'Email';
 
   @override
-  String get apiKeyHint => 'Your personal API key';
+  String get passwordLabel => 'Password';
 
   @override
   String get signInButton => 'Sign in';
@@ -30,11 +30,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorEnterServerAddress => 'Please enter the server address';
 
   @override
-  String get errorEnterApiKey => 'Please enter the API key';
+  String get errorEnterEmail => 'Please enter your email';
 
   @override
-  String get errorNotAgent =>
-      'This account is not in the IT Support Agent/Manager group. Please contact your administrator.';
+  String get errorEnterPassword => 'Please enter your password';
 
   @override
   String errorConnectionFailed(String error) {

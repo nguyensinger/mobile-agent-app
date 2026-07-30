@@ -5,12 +5,12 @@
 
   "loginSubtitle": "Sign in to receive and handle support tickets",
   "serverAddressLabel": "VM TECH server address",
-  "apiKeyLabel": "API Key",
-  "apiKeyHint": "Your personal API key",
+  "emailLabel": "Email",
+  "passwordLabel": "Password",
   "signInButton": "Sign in",
   "errorEnterServerAddress": "Please enter the server address",
-  "errorEnterApiKey": "Please enter the API key",
-  "errorNotAgent": "This account is not in the IT Support Agent/Manager group. Please contact your administrator.",
+  "errorEnterEmail": "Please enter your email",
+  "errorEnterPassword": "Please enter your password",
   "errorConnectionFailed": "Could not connect: {error}",
   "@errorConnectionFailed": {
     "placeholders": { "error": { "type": "String" } }

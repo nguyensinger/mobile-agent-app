@@ -72,6 +72,42 @@ class ApiService {
     }
   }
 
+  /// Đăng nhập bằng email + password thay vì API key dán tay. Không dùng _client()/
+  /// _call() ở đây - chưa có apiKey lúc này (đây chính là bước lấy nó), và endpoint
+  /// auth='public' nên không cần header Authorization.
+  Future<Map<String, dynamic>> login(String baseUrl, String email, String password) async {
+    final dio = Dio(BaseOptions(
+      baseUrl: baseUrl.replaceAll(RegExp(r'/+$'), ''),
+      connectTimeout: const Duration(seconds: 15),
+      receiveTimeout: const Duration(seconds: 15),
+      headers: {'Content-Type': 'application/json'},
+    ));
+    try {
+      final response = await dio.post('/api/v1/agent/login', data: {
+        'jsonrpc': '2.0',
+        'method': 'call',
+        'params': {'login': email, 'password': password},
+      });
+      final data = response.data;
+      if (data is Map && data['error'] != null) {
+        final error = data['error'];
+        final message = (error['data']?['message'] ?? error['message'] ?? 'Lỗi không xác định').toString();
+        throw ApiException(message);
+      }
+      final result = data is Map ? data['result'] : null;
+      if (result is Map && result['error'] != null) {
+        throw ApiException(result['error'].toString());
+      }
+      return (result as Map).cast<String, dynamic>();
+    } on DioException catch (e) {
+      if (e.response?.data is Map && e.response?.data['error'] != null) {
+        final error = e.response!.data['error'];
+        throw ApiException((error['data']?['message'] ?? error['message']).toString());
+      }
+      throw ApiException(_describeDioError(e));
+    }
+  }
+
   String _describeDioError(DioException e) {
     switch (e.type) {
       case DioExceptionType.connectionTimeout:

@@ -4,12 +4,12 @@
 
   "loginSubtitle": "Đăng nhập để nhận và xử lý ticket hỗ trợ",
   "serverAddressLabel": "Địa chỉ máy chủ VM TECH",
-  "apiKeyLabel": "API Key",
-  "apiKeyHint": "API key cá nhân của bạn",
+  "emailLabel": "Email",
+  "passwordLabel": "Mật khẩu",
   "signInButton": "Đăng nhập",
   "errorEnterServerAddress": "Vui lòng nhập địa chỉ máy chủ",
-  "errorEnterApiKey": "Vui lòng nhập API key",
-  "errorNotAgent": "Tài khoản này không thuộc nhóm IT Support Agent/Manager. Vui lòng liên hệ quản trị viên.",
+  "errorEnterEmail": "Vui lòng nhập email",
+  "errorEnterPassword": "Vui lòng nhập mật khẩu",
   "errorConnectionFailed": "Không kết nối được: {error}",
 
   "appBarTitle": "IT Support",
