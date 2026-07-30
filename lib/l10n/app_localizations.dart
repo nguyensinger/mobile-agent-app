@@ -115,7 +115,7 @@ abstract class AppLocalizations {
   /// No description provided for @serverAddressLabel.
   ///
   /// In en, this message translates to:
-  /// **'Odoo server address'**
+  /// **'VM TECH server address'**
   String get serverAddressLabel;
 
   /// No description provided for @apiKeyLabel.
@@ -151,7 +151,7 @@ abstract class AppLocalizations {
   /// No description provided for @errorNotAgent.
   ///
   /// In en, this message translates to:
-  /// **'This account is not in the IT Support Agent/Manager group on Odoo. Please contact your administrator.'**
+  /// **'This account is not in the IT Support Agent/Manager group. Please contact your administrator.'**
   String get errorNotAgent;
 
   /// No description provided for @errorConnectionFailed.

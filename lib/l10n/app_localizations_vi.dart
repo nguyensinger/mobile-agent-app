@@ -15,7 +15,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get loginSubtitle => 'Đăng nhập để nhận và xử lý ticket hỗ trợ';
 
   @override
-  String get serverAddressLabel => 'Địa chỉ máy chủ Odoo';
+  String get serverAddressLabel => 'Địa chỉ máy chủ VM TECH';
 
   @override
   String get apiKeyLabel => 'API Key';
@@ -34,7 +34,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get errorNotAgent =>
-      'Tài khoản này không thuộc nhóm IT Support Agent/Manager trên Odoo. Vui lòng liên hệ quản trị viên.';
+      'Tài khoản này không thuộc nhóm IT Support Agent/Manager. Vui lòng liên hệ quản trị viên.';
 
   @override
   String errorConnectionFailed(String error) {

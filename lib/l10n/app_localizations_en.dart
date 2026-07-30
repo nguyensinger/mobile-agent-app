@@ -15,7 +15,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginSubtitle => 'Sign in to receive and handle support tickets';
 
   @override
-  String get serverAddressLabel => 'Odoo server address';
+  String get serverAddressLabel => 'VM TECH server address';
 
   @override
   String get apiKeyLabel => 'API Key';
@@ -34,7 +34,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorNotAgent =>
-      'This account is not in the IT Support Agent/Manager group on Odoo. Please contact your administrator.';
+      'This account is not in the IT Support Agent/Manager group. Please contact your administrator.';
 
   @override
   String errorConnectionFailed(String error) {

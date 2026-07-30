@@ -4,13 +4,13 @@
   "@appTitle": { "description": "App title shown on the login screen" },
 
   "loginSubtitle": "Sign in to receive and handle support tickets",
-  "serverAddressLabel": "Odoo server address",
+  "serverAddressLabel": "VM TECH server address",
   "apiKeyLabel": "API Key",
   "apiKeyHint": "Your personal API key",
   "signInButton": "Sign in",
   "errorEnterServerAddress": "Please enter the server address",
   "errorEnterApiKey": "Please enter the API key",
-  "errorNotAgent": "This account is not in the IT Support Agent/Manager group on Odoo. Please contact your administrator.",
+  "errorNotAgent": "This account is not in the IT Support Agent/Manager group. Please contact your administrator.",
   "errorConnectionFailed": "Could not connect: {error}",
   "@errorConnectionFailed": {
     "placeholders": { "error": { "type": "String" } }

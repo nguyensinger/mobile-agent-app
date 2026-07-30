@@ -3,13 +3,13 @@
   "appTitle": "IT Support Agent",
 
   "loginSubtitle": "Connectez-vous pour recevoir et traiter les tickets de support",
-  "serverAddressLabel": "Adresse du serveur Odoo",
+  "serverAddressLabel": "Adresse du serveur VM TECH",
   "apiKeyLabel": "Clé API",
   "apiKeyHint": "Votre clé API personnelle",
   "signInButton": "Se connecter",
   "errorEnterServerAddress": "Veuillez saisir l'adresse du serveur",
   "errorEnterApiKey": "Veuillez saisir la clé API",
-  "errorNotAgent": "Ce compte n'appartient pas au groupe IT Support Agent/Manager sur Odoo. Veuillez contacter votre administrateur.",
+  "errorNotAgent": "Ce compte n'appartient pas au groupe IT Support Agent/Manager. Veuillez contacter votre administrateur.",
   "errorConnectionFailed": "Connexion impossible : {error}",
 
   "appBarTitle": "IT Support",
