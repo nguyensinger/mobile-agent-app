@@ -1,4 +1,4 @@
-# Mobile Agent App (Flutter)
+# VM TECH Mobile Support (Flutter)
 
 Ứng dụng Android/iOS cho nhân viên IT support trực ca:
 - Xem danh sách ticket (của tôi / chưa gán), nhận ticket mới
